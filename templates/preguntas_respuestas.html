@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="preguntas-respuestas-container">
+    <div class="titulo-seccion">
+        <h2>Preguntas y Respuestas</h2>
+        <p>En esta sección puedes hacer preguntas y obtener respuestas de otros programadores. ¡Comparte tus dudas y ayuda a otros!</p>
+    </div>
+    <div class="preguntas-anteriores">
+        <h2>Preguntas Anteriores</h2>
+        <ul class="list-group">
+            {% for idx, p in enumerate(preguntas) %}
+                <li class="list-group-item">
+                    <a href="#pregunta-{{ idx }}">{{ p.pregunta }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <div>
+        <div class="haz-una-pregunta">
+            <h2>Haz una Pregunta</h2>
+            <form method="POST">
+                <div class="form-group">
+                    <label for="pregunta">Pregunta</label>
+                    <input type="text" class="form-control" id="pregunta" name="pregunta" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar Pregunta</button>
+            </form>
+        </div>
+        <div class="preguntas-respuestas">
+            <h2>Preguntas y Respuestas</h2>
+            {% for idx, p in enumerate(preguntas) %}
+                <div class="card mb-3" id="pregunta-{{ idx }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ p.pregunta }}</h5>
+                        <h6 class="card-subtitle mb-2 text-muted">Respuestas:</h6>
+                        <ul>
+                            {% for respuesta in p.respuestas %}
+                                <li>{{ respuesta }}</li>
+                            {% endfor %}
+                        </ul>
+                        <form method="POST" action="{{ url_for('responder', pregunta_id=idx) }}">
+                            <div class="form-group">
+                                <label for="respuesta">Respuesta</label>
+                                <input type="text" class="form-control" id="respuesta" name="respuesta" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar Respuesta</button>
+                        </form>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

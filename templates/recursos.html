@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="recursos-container">
+    <h2>Recursos para Programadores</h2>
+    <p>Encuentra aquí una colección de recursos útiles para mejorar tus habilidades de programación. ¡Explora y aprende!</p>
+    <input type="text" id="buscador" class="form-control" placeholder="Buscar recursos...">
+    <div class="recursos-grid">
+        <div class="recurso-item">
+            <img src="{{ url_for('static', filename='img/python.png') }}" alt="Python" class="recurso-imagen">
+            <a href="https://www.python.org/">Python</a>
+        </div>
+        <div class="recurso-item">
+            <img src="{{ url_for('static', filename='img/mdn.jpg') }}" alt="MDN Web Docs" class="recurso-imagen">
+            <a href="https://developer.mozilla.org/">MDN Web Docs</a>
+        </div>
+        <div class="recurso-item">
+            <img src="{{ url_for('static', filename='img/stackoverflow.png') }}" alt="Stack Overflow" class="recurso-imagen">
+            <a href="https://stackoverflow.com/">Stack Overflow</a>
+        </div>
+        <div class="recurso-item">
+            <img src="{{ url_for('static', filename='img/freecodecamp.png') }}" alt="FreeCodeCamp" class="recurso-imagen">
+            <a href="https://www.freecodecamp.org/">FreeCodeCamp</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('buscador').addEventListener('input', function() {
+        var filter = this.value.toLowerCase();
+        var items = document.querySelectorAll('.recurso-item');
+        items.forEach(function(item) {
+            var text = item.textContent.toLowerCase();
+            if (text.includes(filter)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+</script>
+{% endblock %}

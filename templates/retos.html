@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="retos-container">
+    <h2>Retos de Programación</h2>
+    <p>En esta sección encontrarás retos de programación y mini juegos para mejorar tus habilidades. ¡Intenta resolverlos y aprende algo nuevo!</p>
+    <input type="text" id="buscador-retos" class="form-control" placeholder="Buscar retos...">
+    <div class="retos-grid" id="retos-grid">
+        <div class="reto-item">
+            <img src="{{ url_for('static', filename='img/codewars.png') }}" alt="Codewars" class="reto-imagen">
+            <a href="https://www.codewars.com/" target="_blank">Codewars</a>
+        </div>
+        <div class="reto-item">
+            <img src="{{ url_for('static', filename='img/codingame.png') }}" alt="CodinGame" class="reto-imagen">
+            <a href="https://www.codingame.com/" target="_blank">CodinGame</a>
+        </div>
+        <div class="reto-item">
+            <img src="{{ url_for('static', filename='img/hackerrank.png') }}" alt="HackerRank" class="reto-imagen">
+            <a href="https://www.hackerrank.com/" target="_blank">HackerRank</a>
+        </div>
+        <div class="reto-item">
+            <img src="{{ url_for('static', filename='img/LeonhardEuler.jpg') }}" alt="Project Euler" class="reto-imagen">
+            <a href="https://projecteuler.net/" target="_blank">Project Euler</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.getElementById('buscador-retos').addEventListener('input', function() {
+        var filter = this.value.toLowerCase();
+        var items = document.querySelectorAll('.reto-item');
+        items.forEach(function(item) {
+            var text = item.textContent.toLowerCase();
+            if (text.includes(filter)) {
+                item.style.display = '';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    });
+</script>
+{% endblock %}

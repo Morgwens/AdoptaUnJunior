@@ -1,0 +1,314 @@
+/* Estilos generales */
+body {
+    background-color: #E6E6FA; /* Lavanda (morado claro) */
+    color: #572364; /* Gris oscuro */
+    font-family: Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #572364; /* Naranja oscuro */
+    text-align: center;
+}
+
+h1 {
+    font-size: 2.5rem; /* Ajustar tamaño del h1 */
+}
+
+.navbar {
+    background-color: #572364; /* Naranja oscuro */
+}
+
+.nav-link {
+    color: #FFFFFF !important; /* Gris oscuro */
+}
+
+.btn-primary {
+    background-color: #FF8C00; /* Naranja oscuro */
+    border-color: #FF8C00; /* Naranja oscuro */
+}
+
+.btn-primary:hover {
+    background-color: #FFA500; /* Naranja */
+    border-color: #FFA500; /* Naranja */
+}
+
+.card {
+    background-color: #F8F8FF; /* Blanco fantasía */
+    border: 1px solid #D3D3D3; /* Gris claro */
+}
+
+.card-title {
+    color: #FF8C00; /* Naranja oscuro */
+}
+
+.card-subtitle {
+    color: #666; /* Gris medio */
+}
+
+.form-control {
+    background-color: #FFF; /* Blanco */
+    color: #333; /* Gris oscuro */
+    border: 1px solid #D3D3D3; /* Gris claro */
+}
+
+.form-control:focus {
+    background-color: #F0F0F0; /* Gris claro */
+    color: #333; /* Gris oscuro */
+    border-color: #FF8C00; /* Naranja oscuro */
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    font-weight: bold;
+}
+
+.banner {
+    position: relative;
+    text-align: center;
+    color: #FFF; /* Blanco */
+    margin-bottom: 20px;
+    height: 500px; /* Altura fija para el banner */
+    overflow: hidden;
+    border-radius: 15px 50px;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7); /* Ajustar brillo */
+    border-radius: 15px 50px;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(255, 140, 0, 0.5), rgba(230, 230, 250, 0.5)); /* Degradado */
+    z-index: 1;
+    border-radius: 15px 50px;
+}
+
+.banner-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%; /* Ajustar ancho del texto */
+    text-align: center;
+}
+
+/* Estilos específicos para preguntas y respuestas */
+.preguntas-respuestas-container {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+    margin: 20px;
+    padding: 20px;
+}
+
+.titulo-seccion {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.titulo-seccion h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.titulo-seccion p {
+    font-size: 1.25rem;
+    margin-bottom: 20px;
+}
+
+.preguntas-anteriores {
+    margin-bottom: 20px;
+}
+
+.preguntas-anteriores h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.preguntas-anteriores .list-group-item {
+    background-color: #F8F8FF; /* Blanco fantasía */
+    border: 1px solid #D3D3D3; /* Gris claro */
+    color: #333; /* Gris oscuro */
+}
+
+.preguntas-anteriores .list-group-item a {
+    color: #FF8C00; /* Naranja oscuro */
+    text-decoration: none;
+}
+
+.preguntas-anteriores .list-group-item a:hover {
+    text-decoration: underline;
+}
+
+.haz-una-pregunta {
+    margin-bottom: 20px;
+}
+
+.haz-una-pregunta h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.preguntas-respuestas {
+    margin-top: 20px;
+}
+
+.preguntas-respuestas h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.preguntas-respuestas .card {
+    margin-bottom: 20px;
+}
+
+.preguntas-respuestas .card-body {
+    padding: 20px;
+}
+
+.preguntas-respuestas .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.preguntas-respuestas .card-subtitle {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.preguntas-respuestas .form-group {
+    margin-bottom: 10px;
+}
+
+/* Estilos específicos para recursos */
+.recursos-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.recursos-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.recursos-container p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.recursos-container .form-control {
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.recursos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.recurso-item {
+    background-color: #F8F8FF; /* Blanco fantasía */
+    border: 1px solid #D3D3D3; /* Gris claro */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.recurso-imagen {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.recurso-item a {
+    color: #FF8C00; /* Naranja oscuro */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.recurso-item a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos específicos para retos */
+.retos-container {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.retos-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.retos-container p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.retos-container .form-control {
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.retos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.reto-item {
+    background-color: #F8F8FF; /* Blanco fantasía */
+    border: 1px solid #D3D3D3; /* Gris claro */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.reto-imagen {
+    width: 100%;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.reto-item a {
+    color: #FF8C00; /* Naranja oscuro */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.reto-item a:hover {
+    text-decoration: underline;
+}

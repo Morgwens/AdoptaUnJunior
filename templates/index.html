@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="banner">
+    <div class="banner-overlay"></div>
+    <img src="{{ url_for('static', filename='img/banner.png') }}" alt="Banner Image" class="banner-image">
+    <div class="banner-text">
+        <h1>Bienvenidos programadores</h1>
+        <p>Aprende programación de una manera divertida y desafiante.</p>
+    </div>
+</div>
+<div class="intro">
+    <h2>¿Qué es este sitio?</h2>
+    <p>Este sitio está diseñado para ayudarte a mejorar tus habilidades de programación a través de retos, preguntas y respuestas, y recursos útiles. Explora las diferentes secciones para comenzar tu viaje de aprendizaje.</p>
+</div>
+{% endblock %}
